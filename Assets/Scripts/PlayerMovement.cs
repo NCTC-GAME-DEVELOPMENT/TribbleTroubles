@@ -5,7 +5,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool canJump = true;
     public float speed = 3;
+    public bool RedLens;
+    public bool YellowLens;
+    public bool BlueLens;
     private Rigidbody rb;
+
+    public int lensColor = 0;
 
     Keyboard kb = Keyboard.current;
 
@@ -22,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (kb.spaceKey.wasPressedThisFrame && canJump)
             {
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, speed * 1.5f, rb.linearVelocity.z);
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, speed * 2f, rb.linearVelocity.z);
                 canJump = false;
             }
             
@@ -33,5 +38,34 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         canJump = true;
+    }
+
+    public void ChangeLens()
+    {
+        if (/*left trigger pressed*/)
+        {
+            lensColor--;
+
+            if (lensColor < 0)
+            {
+                lensColor = 3;
+            }
+        }
+
+        if (/*right trigger pressed*/)
+        {
+            lensColor++;
+
+            if (lensColor > 3)
+            {
+                lensColor = 0;
+            }
+        }
+    }
+    public void SelectRed()
+    {
+        RedLens = true;
+        YellowLens = false;
+        BlueLens = false;
     }
 }

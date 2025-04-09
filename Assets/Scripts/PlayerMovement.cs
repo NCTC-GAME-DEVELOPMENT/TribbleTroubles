@@ -40,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
         canJump = true;
     }
 
-    public void ChangeLens()
+    /*public void ChangeLens()
     {
-        if (/*left trigger pressed*/)
+        if ()
         {
             lensColor--;
 
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (/*right trigger pressed*/)
+        if ()
         {
             lensColor++;
 
@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
                 lensColor = 0;
             }
         }
-    }
+    }*/
     public void SelectRed()
     {
         RedLens = true;

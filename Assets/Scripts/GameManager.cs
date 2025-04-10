@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void CycleLensPlus()
     {
+        Debug.Log("CL PLUS Activated");
         LensStateIndex++;
         if (LensStateIndex >= LensStates.Count)
         {
@@ -53,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void CycleLensMinus()
     {
+        Debug.Log("CL MINUS Activated");
+
         LensStateIndex--;
         if (LensStateIndex < 0)
         {
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
         YellowWorld.SetActive(false);
         BlueWorld.SetActive(false);
         currentLens = EnumWorldColor.Blank;
+        Debug.Log("Blank world activated");
     }
 
     public void RedState()
@@ -76,6 +80,7 @@ public class GameManager : MonoBehaviour
         YellowWorld.SetActive(false);
         BlueWorld.SetActive(false);
         currentLens = EnumWorldColor.Red;
+        Debug.Log("Red world activated");
     }
 
     public void YellowState()
@@ -84,6 +89,7 @@ public class GameManager : MonoBehaviour
         YellowWorld.SetActive(true);
         BlueWorld.SetActive(false);
         currentLens = EnumWorldColor.Yellow;
+        Debug.Log("Yellow world activated");
     }
 
     public void BlueState()
@@ -92,5 +98,6 @@ public class GameManager : MonoBehaviour
         YellowWorld.SetActive(false);
         BlueWorld.SetActive(true);
         currentLens = EnumWorldColor.Blue;
+        Debug.Log("Blue world activated");
     }
 }

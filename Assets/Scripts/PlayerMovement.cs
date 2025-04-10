@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//Proto movement. Works but needs fine tuning
+
 public class PlayerMovement : MonoBehaviour
 {
+
     public bool canJump = true;
     public float speed = 3;
     public bool RedLens;

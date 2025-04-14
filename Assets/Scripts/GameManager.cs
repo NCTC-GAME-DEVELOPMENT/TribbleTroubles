@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using static UnityEngine.Rendering.DebugUI;
 
 
 //Connects all managers to keep game running
@@ -15,7 +16,10 @@ public class GameManager : MonoBehaviour
     public delegate void LensFunction();
     private List<LensFunction> LensStates;
     int LensStateIndex = 0;
+
     public static GameManager Instance;
+
+    private Dictionary<string, bool> levelFlags;
 
     private void Awake()
     {
@@ -27,6 +31,8 @@ public class GameManager : MonoBehaviour
         LensStates.Add(RedState);
         LensStates.Add(YellowState);
         LensStates.Add(BlueState);
+
+        levelFlags = new Dictionary<string, bool>();
     }
 
     void Start()
@@ -38,6 +44,27 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetFlag(string flagname, bool value)
+    {
+        if(levelFlags.ContainsKey(flagname))
+        {
+            levelFlags[flagname] = value;
+        }
+        else
+        {
+            levelFlags.Add(flagname, value);
+        }
+    }
+
+    public bool GetFlag(string flagname)
+    {
+        if (levelFlags.ContainsKey(flagname))
+        {
+            return levelFlags[flagname];
+        }
+        return false;
     }
 
     public void CycleLensPlus()

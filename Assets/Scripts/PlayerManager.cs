@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
 
     public float speed = 3;
     public float jump = 5;
+    public float additionalGravity = .05f; 
     public Transform EyesObject; 
 
     public InteractableObject currentObject;
@@ -99,6 +100,11 @@ public class PlayerManager : MonoBehaviour
     {
         Vector3 newVelocity = rb.linearVelocity;
         newVelocity.x = value * speed;
+        
+        if (!IsGrounded())
+        {
+            newVelocity.y -= additionalGravity;
+        }
         rb.linearVelocity = newVelocity;
 
         // flip the eyes to face direction we're moving. 

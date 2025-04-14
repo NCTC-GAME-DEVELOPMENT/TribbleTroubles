@@ -10,9 +10,13 @@ public class PlayerManager : MonoBehaviour
 
     public float speed = 3;
     public float jump = 5;
+    public Transform EyesObject; 
+
+    public InteractableObject currentObject;
 
     private Rigidbody rb;
 
+    public float VelocityUnderIsGroundedValue = 0.1f; 
 
     //Input Varibles
     // Jump
@@ -26,7 +30,7 @@ public class PlayerManager : MonoBehaviour
     bool leftTriggerButton = false;
     bool rightTriggerButton = false;
 
-    public InteractableObject currentObject; 
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,13 +42,20 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+
         GetInput(InputNumber);
 
-        rb.linearVelocity = Vector3.zero;
+        //rb.linearVelocity = Vector3.zero;
 
         MovePlayer(leftThumbStick.x);
 
-        PlayerJump(northButton);
+        if (northButton)
+        {
+            PlayerStartJump();
+        }
+            
 
 
         if (leftTriggerButton)
@@ -67,6 +78,8 @@ public class PlayerManager : MonoBehaviour
 
     void GetInput(int PlayerInputNumber)
     {
+        ClearInputs(); 
+
         if (PlayerInputNumber == 0) { GetInputPlayer0(); return; }
 
         if (PlayerInputNumber == 1) { GetInputPlayer1(); return; }
@@ -84,13 +97,44 @@ public class PlayerManager : MonoBehaviour
 
     public void MovePlayer(float value)
     {
-        rb.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.linearVelocity.y);
+        Vector3 newVelocity = rb.linearVelocity;
+        newVelocity.x = value * speed;
+        rb.linearVelocity = newVelocity;
+
+        // flip the eyes to face direction we're moving. 
+        if (value == 0 )
+        {
+            // don't flip eyes if value is zero
+            return; 
+        }
+        Vector3 newScale = EyesObject.localScale; 
+        if (value >= 0)
+        {
+            newScale.x = 1;
+        }
+        else
+        {
+            newScale.x = -1; 
+        }
+        EyesObject.localScale = newScale; 
+        
+
     }
     
-    public void PlayerJump(float value)
+    public void PlayerStartJump()
     {
+        if (!IsGrounded())
+        {
+            return; 
+        }
+
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump * 2);
         Debug.Log("Jump");
+    }
+
+    public bool IsGrounded()
+    {
+        return (Mathf.Abs(rb.linearVelocity.y) < VelocityUnderIsGroundedValue); 
     }
 
     public void GetInputPlayer0()

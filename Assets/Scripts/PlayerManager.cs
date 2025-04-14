@@ -44,6 +44,8 @@ public class PlayerManager : MonoBehaviour
 
         MovePlayer(leftThumbStick.x);
 
+        PlayerJump(northButton);
+
 
         if (leftTriggerButton)
         {
@@ -87,7 +89,8 @@ public class PlayerManager : MonoBehaviour
     
     public void PlayerJump(float value)
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump * 2);
+        Debug.Log("Jump");
     }
 
     public void GetInputPlayer0()

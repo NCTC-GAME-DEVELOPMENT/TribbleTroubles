@@ -15,5 +15,9 @@ public class ToDo : MonoBehaviour
     Morgan Section:
 
     Kill zones: Colliders that causes the player's death
+
+    Kyle:
+    Chekpoint object- detect when player touches it, send itself to the GameManager in a gameObject variable
+    this variable will be referenced by the player character as where to go upon defeat.
     */
 }

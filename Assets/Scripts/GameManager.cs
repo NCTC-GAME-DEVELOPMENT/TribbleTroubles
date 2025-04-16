@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject YellowWorld;
     public GameObject BlueWorld;
 
+    public GameObject currentCheckPoint;
+
     public EnumWorldColor currentLens = EnumWorldColor.Blank;
     public delegate void LensFunction();
     private List<LensFunction> LensStates;
@@ -126,5 +128,15 @@ public class GameManager : MonoBehaviour
         BlueWorld.SetActive(true);
         currentLens = EnumWorldColor.Blue;
         Debug.Log("Blue world activated");
+    }
+
+    public void SetCheckPoint(GameObject newCheckPoint)
+    {
+        currentCheckPoint = newCheckPoint;
+    }
+
+    public GameObject GetCheckPoint()
+    {
+        return currentCheckPoint;
     }
 }

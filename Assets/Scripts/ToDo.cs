@@ -11,5 +11,9 @@ public class ToDo : MonoBehaviour
     Make sure to call the SetFlag Function in GameManager in Enable
 
     Make script that tests Enable
+
+    Morgan Section:
+
+    Kill zones: Colliders that causes the player's death
     */
 }

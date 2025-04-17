@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class Button : InteractableObject
 {
-    public string buttonName;
-    public GameObject activator;
+    public string gameFlagName = "DefaultButton";
     public bool Activated = true;
     private void OnEnable()
     {
-        if (Activated)
-        {
-
-        }
+        Activated = GameManager.Instance.GetFlag(gameFlagName);
     }
     void Start()
     {
@@ -21,5 +17,17 @@ public class Button : InteractableObject
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Activated = true;
+        GameManager.Instance.SetFlag(gameFlagName, Activated);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Activated = false;
+        GameManager.Instance.SetFlag(gameFlagName, Activated);
     }
 }

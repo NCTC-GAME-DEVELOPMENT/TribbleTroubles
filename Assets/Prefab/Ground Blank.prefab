@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 935531133550938955}
   - component: {fileID: 6552203136456291692}
   m_Layer: 0
-  m_Name: Ground Panel
+  m_Name: Ground Blank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

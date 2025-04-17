@@ -1,3 +1,4 @@
+using System.Diagnostics.Contracts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,9 @@ public class PlayerManager : MonoBehaviour
     public InteractableObject currentObject;
 
     private Rigidbody rb;
+    public GameObject PlayerModel;
+
+    public KillZones death;
 
     public float VelocityUnderIsGroundedValue = 0.1f; 
 
@@ -38,6 +42,9 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        // Where the player starts is the first checkpoint 
+        GameManager.Instance.SetCheckPoint(gameObject); 
     }
 
     // Update is called once per frame
@@ -172,5 +179,13 @@ public class PlayerManager : MonoBehaviour
             northButton = kb.wKey.wasPressedThisFrame;
             southButton = kb.nKey.wasPressedThisFrame;
         }
+    }
+    
+    public void OnPlayerDeath()
+    {
+        GameObject LastCheckpoint = GameManager.Instance.GetCheckPoint(); 
+        
+        // teleport to last Checkpoint
+        gameObject.transform.position = LastCheckpoint.transform.position;
     }
 }

@@ -3,13 +3,13 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public GameObject model;
-    public bool FlagIsRaised = false; 
+    public bool FlagIsRaised = false;
 
-
+    public Animation anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        anim = GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -35,10 +35,15 @@ public class Checkpoint : MonoBehaviour
         }
 
     }
-
-    public void RaiseTheFlag()
-    {
-        
+    public void RaiseTheFlag() 
+        {
+        if (anim != null) {
+            anim.Play("FlagRaiseAnimation");
+        }
+        else 
+        {
+            Debug.LogWarning("Animation component is not assigned!");
+        }
     }
 
 }

@@ -52,26 +52,33 @@ public class GameManager : MonoBehaviour
     {
         if(levelFlags.ContainsKey(flagname))
         {
+           //Debug.Log("SET: DIC Contains " + flagname);
             levelFlags[flagname] = value;
         }
         else
         {
+          //  Debug.Log("SET: DIC adds " + flagname);
             levelFlags.Add(flagname, value);
         }
     }
 
     public bool GetFlag(string flagname)
     {
+
+
         if (levelFlags.ContainsKey(flagname))
         {
+            //Debug.Log("GET: DIC Contains " + flagname);
             return levelFlags[flagname];
         }
+
+       // Debug.Log("SET: DIC Missing " + flagname);
         return false;
     }
 
     public void CycleLensPlus()
     {
-        Debug.Log("CL PLUS Activated");
+       // Debug.Log("CL PLUS Activated");
         LensStateIndex++;
         if (LensStateIndex >= LensStates.Count)
         {
@@ -83,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void CycleLensMinus()
     {
-        Debug.Log("CL MINUS Activated");
+       // Debug.Log("CL MINUS Activated");
 
         LensStateIndex--;
         if (LensStateIndex < 0)

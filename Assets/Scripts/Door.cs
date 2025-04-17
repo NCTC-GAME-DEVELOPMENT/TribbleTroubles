@@ -1,16 +1,21 @@
 using UnityEngine;
 
-public class Door : InteractableObject
+public class Door : MonoBehaviour
 {
-    public string doorName;
-    public GameObject activator;
-    public bool Activated = true;
+    public string gameFlagName = "DefaultSwitch";
+    public bool Activated = false;
+    public GameObject ModelON;
+    public GameObject ModelOFF;
     private void OnEnable()
     {
-        if (Activated)
-        {
-            
-        }
+        Debug.Log("OnEnable " + gameFlagName);
+
+        Activated = GameManager.Instance.GetFlag(gameFlagName);
+
+        // set to it's activated position
+        ModelON.SetActive(!Activated); 
+        ModelOFF.SetActive(Activated);
+
     }
 
     void Start()

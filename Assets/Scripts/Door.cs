@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : LensObject
 {
     public string gameFlagName = "DefaultSwitch";
     public bool Activated = false;
@@ -8,14 +8,18 @@ public class Door : MonoBehaviour
     public GameObject ModelOFF;
     private void OnEnable()
     {
+        SetStatus(); 
+    }
+
+    public override void SetStatus()
+    {
         Debug.Log("OnEnable " + gameFlagName);
 
         Activated = GameManager.Instance.GetFlag(gameFlagName);
 
         // set to it's activated position
-        ModelON.SetActive(!Activated); 
+        ModelON.SetActive(!Activated);
         ModelOFF.SetActive(Activated);
-
     }
 
     void Start()

@@ -1,19 +1,29 @@
+using System.Collections.Generic;
 using UnityEngine;
+
 
 public class Switch : InteractableObject
 {
     public string gameFlagName = "DefaultSwitch";
     public bool Activated = false;
+
+    public List<LensObject> SameLensObjects;
+
     private void OnEnable()
     {
-        Debug.Log("OnEnable " + gameFlagName); 
-     
-         Activated = GameManager.Instance.GetFlag(gameFlagName); 
-        
-        // set to it's activated position
-            SetScale();
-        
+        SetStatus(); 
     }
+
+    public override void SetStatus()
+    {
+        Debug.Log("OnEnable " + gameFlagName);
+
+        Activated = GameManager.Instance.GetFlag(gameFlagName);
+
+        // set to it's activated position
+        SetScale();
+    }
+
     void Start()
     {
         
@@ -32,6 +42,10 @@ public class Switch : InteractableObject
         SetScale();
         GameManager.Instance.SetFlag(gameFlagName, Activated);  
         
+        foreach (LensObject obj in SameLensObjects)
+        {
+            obj.UpdateStatus(); 
+        }
     }
 
     public override void OnEnter()
@@ -52,6 +66,6 @@ public class Switch : InteractableObject
             newScale.x *= -1;
         }
         gameObject.transform.localScale = newScale;
-        
+        //Here add thing to other function
     }
 }

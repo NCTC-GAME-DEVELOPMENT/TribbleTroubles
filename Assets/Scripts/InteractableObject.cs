@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InteractableObject : MonoBehaviour
+public class InteractableObject : LensObject
 {
     public virtual void PerformInteraction()
     {

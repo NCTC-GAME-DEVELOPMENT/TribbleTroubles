@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6552203136456291692}
   - component: {fileID: 8913102612611564848}
   m_Layer: 0
-  m_Name: Ground Blank
+  m_Name: Blank Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdbcf1f7278d964580420e0a11f2e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entryDirection: {x: 0, y: 2, z: 0}
+  entryDirection: {x: 0, y: 1, z: 0}
   localDirection: 0
+  triggerScale: 1.25
 --- !u!1 &5612484687540212466
 GameObject:
   m_ObjectHideFlags: 0

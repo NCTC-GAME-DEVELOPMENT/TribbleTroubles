@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100905024429900662
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1574042899651538478, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d3c7bb4ebf49734eae72923057118d6, type: 2}
+    - target: {fileID: 2828833600525838730, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: entryDirection.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.372347
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.117492
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6625414
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384780938176039296, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6413722769018328433, guid: a58b84be391bdac4aabd91975c559fae, type: 3}
+      propertyPath: m_Name
+      value: 'Yellow Platform '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a58b84be391bdac4aabd91975c559fae, type: 3}

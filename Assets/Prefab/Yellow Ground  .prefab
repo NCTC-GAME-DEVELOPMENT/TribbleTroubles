@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 428304131945773515, guid: e52cb0b12172fb94899f293e67c9fd66, type: 3}
       propertyPath: m_Name
-      value: Ground Yellow Variant
+      value: 'Yellow Ground  '
       objectReference: {fileID: 0}
     - target: {fileID: 5272489325386072724, guid: e52cb0b12172fb94899f293e67c9fd66, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

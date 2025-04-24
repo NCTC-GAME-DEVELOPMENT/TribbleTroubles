@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8797819013065844375
+--- !u!1001 &3003610242302266747
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,12 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 428304131945773515, guid: e52cb0b12172fb94899f293e67c9fd66, type: 3}
       propertyPath: m_Name
-      value: Ground Red Variant
+      value: Blue Ground
       objectReference: {fileID: 0}
     - target: {fileID: 5272489325386072724, guid: e52cb0b12172fb94899f293e67c9fd66, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5e8278c422427104c89e8fd7cd689774, type: 2}
+      objectReference: {fileID: 2100000, guid: c038b50be9381184899cba13747cc25f, type: 2}
     - target: {fileID: 6929462843963778362, guid: e52cb0b12172fb94899f293e67c9fd66, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2

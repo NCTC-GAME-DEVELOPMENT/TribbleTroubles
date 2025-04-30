@@ -8,6 +8,8 @@ public class Button : LensObject
 
     public List<LensObject> SameLensObjects;
     public Transform AnimateButton;
+
+    public int triggerCount = 0;
     
     private void OnEnable()
     {
@@ -26,6 +28,7 @@ public class Button : LensObject
 
         if (bigThing || player )
         {
+            triggerCount++;
             OnEnter(); 
         }
 
@@ -38,13 +41,16 @@ public class Button : LensObject
 
         if (bigThing || player)
         {
-            OnExit();
+            triggerCount--;
+            if (triggerCount == 0)
+            {
+                OnExit();
+            }
         }
     }
 
     public virtual void OnEnter()
     {
-        Debug.Log("Button Activated");
         Activated = true;
         GameManager.Instance.SetFlag(gameFlagName, Activated);
         foreach (LensObject obj in SameLensObjects)
@@ -54,13 +60,12 @@ public class Button : LensObject
 
         // Other code here for animation purposes. 
         Vector3 newPosition = AnimateButton.position;
-        newPosition.y -= 1;
+        newPosition.y = -1;
         AnimateButton.position = newPosition;
     }
 
     public virtual void OnExit()
     {
-        Debug.Log("Button Deactivated");
         Activated = false;
         GameManager.Instance.SetFlag(gameFlagName, Activated);
         foreach (LensObject obj in SameLensObjects)
@@ -70,7 +75,7 @@ public class Button : LensObject
 
         // Other code here for animation purposes. 
         Vector3 newPosition = AnimateButton.position;
-        newPosition.y += 1;
+        newPosition.y = 1;
         AnimateButton.position = newPosition;
     }
 }

@@ -17,4 +17,10 @@ public class ToDo : MonoBehaviour
     Chekpoint object- detect when player touches it, sends itself to the GameManager in a gameObject variable
     this variable will be referenced by the player character as where to go upon defeat.
     */
+
+    /*
+     Red Background Color: FF5F5F
+    Yellow Background Color: FFEB91
+    Blue Background Color: 5F5FFF
+     */
 }

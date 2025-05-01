@@ -115,7 +115,8 @@ public class GameManager : MonoBehaviour
         BlueWorld.SetActive(false);
         currentLens = EnumWorldColor.Blank;
         Debug.Log("Blank world activated");
-        cam.backgroundColor = BlankBackgroundColor; 
+        cam.backgroundColor = BlankBackgroundColor;
+        PlayerManager.Instance.SetPlayerMaterial(PlayerManager.Instance.BlankMat);
     }
 
     public void RedState()
@@ -126,6 +127,7 @@ public class GameManager : MonoBehaviour
         currentLens = EnumWorldColor.Red;
         Debug.Log("Red world activated");
         cam.backgroundColor = RedBackgroundColor;
+        PlayerManager.Instance.SetPlayerMaterial(PlayerManager.Instance.RedMat);
     }
 
     public void YellowState()
@@ -135,7 +137,8 @@ public class GameManager : MonoBehaviour
         BlueWorld.SetActive(false);
         currentLens = EnumWorldColor.Yellow;
         Debug.Log("Yellow world activated");
-        cam.backgroundColor = YellowBackgroundColor; 
+        cam.backgroundColor = YellowBackgroundColor;
+        PlayerManager.Instance.SetPlayerMaterial(PlayerManager.Instance.YellowMat);
     }
 
     public void BlueState()
@@ -145,7 +148,8 @@ public class GameManager : MonoBehaviour
         BlueWorld.SetActive(true);
         currentLens = EnumWorldColor.Blue;
         Debug.Log("Blue world activated");
-        cam.backgroundColor = BlueBackgroundColor; 
+        cam.backgroundColor = BlueBackgroundColor;
+        PlayerManager.Instance.SetPlayerMaterial(PlayerManager.Instance.BlueMat);
     }
 
     public void SetCheckPoint(GameObject newCheckPoint)

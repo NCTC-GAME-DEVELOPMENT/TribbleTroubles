@@ -5,13 +5,20 @@ using UnityEngine.InputSystem;
 //Reusuing this a player movement fine tuning -Morgan
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance;
     
+
     public int InputNumber = 0;
 
     public float speed = 3;
     public float jump = 5;
     public float additionalGravity = .05f; 
-    public Transform EyesObject; 
+    public Transform EyesObject;
+
+    public Material BlankMat;
+    public Material RedMat;
+    public Material BlueMat;
+    public Material YellowMat; 
 
     public InteractableObject currentObject;
 
@@ -34,8 +41,11 @@ public class PlayerManager : MonoBehaviour
     bool leftTriggerButton = false;
     bool rightTriggerButton = false;
 
-    
 
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -186,5 +196,12 @@ public class PlayerManager : MonoBehaviour
         
         // teleport to last Checkpoint
         gameObject.transform.position = LastCheckpoint.transform.position;
+    }
+
+    public void SetPlayerMaterial(Material mat)
+    {
+        MeshRenderer mr = PlayerModel.GetComponent<MeshRenderer>();
+        mr.material = mat;
+
     }
 }

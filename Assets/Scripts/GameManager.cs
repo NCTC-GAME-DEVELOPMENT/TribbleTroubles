@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
 
     public void BlankState()
     {
+        WhiteWorld.SetActive(true);
         RedWorld.SetActive(false);
         YellowWorld.SetActive(false);
         BlueWorld.SetActive(false);
@@ -121,6 +122,7 @@ public class GameManager : MonoBehaviour
 
     public void RedState()
     {
+        WhiteWorld.SetActive(false);
         RedWorld.SetActive(true);
         YellowWorld.SetActive(false);
         BlueWorld.SetActive(false);
@@ -132,6 +134,7 @@ public class GameManager : MonoBehaviour
 
     public void YellowState()
     {
+        WhiteWorld.SetActive(false);
         RedWorld.SetActive(false);
         YellowWorld.SetActive(true);
         BlueWorld.SetActive(false);
@@ -143,6 +146,7 @@ public class GameManager : MonoBehaviour
 
     public void BlueState()
     {
+        WhiteWorld.SetActive(false);
         RedWorld.SetActive(false);
         YellowWorld.SetActive(false);
         BlueWorld.SetActive(true);

@@ -5,11 +5,19 @@ using System.Collections.Generic;
 //Connects all managers to keep game running
 public class GameManager : MonoBehaviour
 {
+    public Camera cam;
+
+
     public GameObject WholeWorld;
     public GameObject WhiteWorld;
     public GameObject RedWorld;
     public GameObject YellowWorld;
     public GameObject BlueWorld;
+
+    public Color BlankBackgroundColor = Color.gray; 
+    public Color RedBackgroundColor = Color.red;
+    public Color YellowBackgroundColor = Color.yellow;
+    public Color BlueBackgroundColor = Color.blue;
 
     public GameObject currentCheckPoint;
 
@@ -44,19 +52,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SetFlag(string flagname, bool value)
     {
-        if(levelFlags.ContainsKey(flagname))
+        if (levelFlags.ContainsKey(flagname))
         {
-           //Debug.Log("SET: DIC Contains " + flagname);
+            //Debug.Log("SET: DIC Contains " + flagname);
             levelFlags[flagname] = value;
         }
         else
         {
-          //  Debug.Log("SET: DIC adds " + flagname);
+            //  Debug.Log("SET: DIC adds " + flagname);
             levelFlags.Add(flagname, value);
         }
     }
@@ -71,13 +79,13 @@ public class GameManager : MonoBehaviour
             return levelFlags[flagname];
         }
 
-       // Debug.Log("SET: DIC Missing " + flagname);
+        // Debug.Log("SET: DIC Missing " + flagname);
         return false;
     }
 
     public void CycleLensPlus()
     {
-       // Debug.Log("CL PLUS Activated");
+        // Debug.Log("CL PLUS Activated");
         LensStateIndex++;
         if (LensStateIndex >= LensStates.Count)
         {
@@ -89,7 +97,7 @@ public class GameManager : MonoBehaviour
 
     public void CycleLensMinus()
     {
-       // Debug.Log("CL MINUS Activated");
+        // Debug.Log("CL MINUS Activated");
 
         LensStateIndex--;
         if (LensStateIndex < 0)
@@ -107,6 +115,7 @@ public class GameManager : MonoBehaviour
         BlueWorld.SetActive(false);
         currentLens = EnumWorldColor.Blank;
         Debug.Log("Blank world activated");
+        cam.backgroundColor = BlankBackgroundColor; 
     }
 
     public void RedState()
@@ -116,6 +125,7 @@ public class GameManager : MonoBehaviour
         BlueWorld.SetActive(false);
         currentLens = EnumWorldColor.Red;
         Debug.Log("Red world activated");
+        cam.backgroundColor = RedBackgroundColor;
     }
 
     public void YellowState()
@@ -125,6 +135,7 @@ public class GameManager : MonoBehaviour
         BlueWorld.SetActive(false);
         currentLens = EnumWorldColor.Yellow;
         Debug.Log("Yellow world activated");
+        cam.backgroundColor = YellowBackgroundColor; 
     }
 
     public void BlueState()
@@ -134,6 +145,7 @@ public class GameManager : MonoBehaviour
         BlueWorld.SetActive(true);
         currentLens = EnumWorldColor.Blue;
         Debug.Log("Blue world activated");
+        cam.backgroundColor = BlueBackgroundColor; 
     }
 
     public void SetCheckPoint(GameObject newCheckPoint)

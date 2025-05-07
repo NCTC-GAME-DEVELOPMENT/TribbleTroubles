@@ -706,7 +706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &311733627
 Transform:
   m_ObjectHideFlags: 0
@@ -1410,6 +1410,10 @@ PrefabInstance:
     - target: {fileID: 9217044971138457436, guid: 22acace153f69484b974a987f066e9f2, type: 3}
       propertyPath: m_Name
       value: 'Red Ground  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217044971138457436, guid: 22acace153f69484b974a987f066e9f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2139,7 +2143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1021766590
 Transform:
   m_ObjectHideFlags: 0
@@ -4028,7 +4032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1820184739
 Transform:
   m_ObjectHideFlags: 0

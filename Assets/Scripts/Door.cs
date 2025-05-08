@@ -13,7 +13,7 @@ public class Door : LensObject
 
     public override void SetStatus()
     {
-        Debug.Log("OnEnable " + gameFlagName);
+        //Debug.Log("OnEnable " + gameFlagName);
 
         Activated = GameManager.Instance.GetFlag(gameFlagName);
 

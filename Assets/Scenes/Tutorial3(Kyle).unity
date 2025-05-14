@@ -1845,6 +1845,10 @@ PrefabInstance:
       value: BlueTesting
       objectReference: {fileID: 0}
     - target: {fileID: 2882552295384411213, guid: 4ecdbb53238b6d24daadadf0824c4b0d, type: 3}
+      propertyPath: triggerCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882552295384411213, guid: 4ecdbb53238b6d24daadadf0824c4b0d, type: 3}
       propertyPath: 'SameLensObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 886134420}

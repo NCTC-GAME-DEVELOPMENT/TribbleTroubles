@@ -3,7 +3,10 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public GameObject model;
+    public Transform FlagModel;
     public bool FlagIsRaised = false;
+    public Vector3 FlagUp;
+    public float speed = 5;
 
     public Animation anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,14 +39,8 @@ public class Checkpoint : MonoBehaviour
 
     }
     public void RaiseTheFlag() 
-        {
-        if (anim != null) {
-            anim.Play("FlagRaiseAnimation");
-        }
-        else 
-        {
-            Debug.LogWarning("Animation component is not assigned!");
-        }
+    {
+        FlagModel.transform.position = Vector3.Lerp(transform.position, FlagUp, Time.deltaTime * speed);
     }
 
 }

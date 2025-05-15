@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
+
 
 public class SceneChange : MonoBehaviour
 {
@@ -31,6 +30,6 @@ public class SceneChange : MonoBehaviour
     {
         Application.Quit();
 
-        EditorApplication.isPlaying = false;
+  
     }
 }
